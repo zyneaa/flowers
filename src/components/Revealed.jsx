@@ -6,32 +6,31 @@ export default function Revealed() {
   return (
     <div style={{ 
       width: '100%',
-      minHeight: '200vh', 
+      minHeight: '130vh', 
       display: 'flex', 
       flexDirection: 'column',
       alignItems: 'center',
+      justifyContent: 'flex-start',
+      padding: '10vh 1rem 10vh 1rem',
+      gap: '10vh', /* Much smaller gap for a mobile-first scroll */
       zIndex: 5,
     }}>
-      <div style={{ height: '100vh', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-        <motion.img
-          src={bouquetImg}
-          initial={{ y: 50, opacity: 0, scale: 0.9 }}
-          animate={{ y: 0, opacity: 1, scale: 1 }}
-          transition={{ type: 'spring', damping: 15, stiffness: 50 }}
-          style={{ width: '90%', maxWidth: '500px' }}
-        />
-      </div>
+      <motion.img
+        src={bouquetImg}
+        initial={{ y: 50, opacity: 0, scale: 0.9 }}
+        animate={{ y: 0, opacity: 1, scale: 1 }}
+        transition={{ type: 'spring', damping: 15, stiffness: 50 }}
+        style={{ width: '90%', maxWidth: '400px' }}
+      />
       
-      <div style={{ height: '200vh', display: 'flex', alignItems: 'center', justifyContent: 'center', paddingBottom: '10vh' }}>
-        <motion.img
-          src={postcardImg}
-          initial={{ y: 50, opacity: 0, rotate: -5 }}
-          whileInView={{ y: 0, opacity: 1, rotate: 2 }}
-          viewport={{ once: true, margin: "-100px" }}
-          transition={{ type: 'spring', damping: 15, stiffness: 50 }}
-          style={{ width: '85%', maxWidth: '500px', boxShadow: '0 10px 30px rgba(0,0,0,0.1)' }}
-        />
-      </div>
+      <motion.img
+        src={postcardImg}
+        initial={{ y: 50, opacity: 0, rotate: -5 }}
+        whileInView={{ y: 0, opacity: 1, rotate: 2 }}
+        viewport={{ once: true, margin: "-50px" }}
+        transition={{ type: 'spring', damping: 15, stiffness: 50 }}
+        style={{ width: '85%', maxWidth: '450px', boxShadow: '0 10px 30px rgba(0,0,0,0.1)' }}
+      />
     </div>
   );
 }
